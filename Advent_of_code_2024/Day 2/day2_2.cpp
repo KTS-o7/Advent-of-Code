@@ -71,7 +71,7 @@ int count_safe_levels(vector<vector<int>>list){
 
 
 int main() {
-    freopen("./day2_1_input.txt", "r", stdin);
+   FILE *f = freopen("./day2_1_input.txt", "r", stdin);
     vector<vector<int>> data;
     string line;
 
@@ -86,6 +86,6 @@ int main() {
     }
 
     cout << "Number of safe levels is " << count_safe_levels(data) << endl;
-
+    fclose(f);
     return 0;
 }

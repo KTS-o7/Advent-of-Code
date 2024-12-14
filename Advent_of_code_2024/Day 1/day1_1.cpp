@@ -20,8 +20,8 @@ int main(){
     // 3 4
     // list1 will be 1, 3
     // list2 will be 2, 4
-
-    freopen("./day1_1_input.txt", "r", stdin);
+    FILE *f;
+    f = freopen("./day1_1_input.txt", "r", stdin);
     vector<int>list1;
     vector<int>list2;
     int a, b;
@@ -30,6 +30,7 @@ int main(){
         list2.push_back(b);
     }
     cout <<"Sum of errors is " <<  find_sum_of_errors(list1, list2) << endl;
+    fclose(f);
     return 0;
 }
 

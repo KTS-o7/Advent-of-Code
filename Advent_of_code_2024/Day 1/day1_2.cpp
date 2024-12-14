@@ -3,7 +3,7 @@
 
 using namespace std;
 
-int find_similarity_score(vector<int>list1, vector<int>list2){
+int find_similarity_score(const vector<int>list1, const vector<int>list2){
     map<int, int>frequency;
     for(int i=0; i<list2.size(); i++){
         frequency[list2[i]]++;
@@ -17,7 +17,8 @@ int find_similarity_score(vector<int>list1, vector<int>list2){
 }
 
 int main(){
-    freopen("./day1_1_input.txt", "r", stdin);
+    FILE *f;
+    f = freopen("./day1_1_input.txt", "r", stdin);
     vector<int>list1;
     vector<int>list2;
     int a, b;
@@ -26,5 +27,6 @@ int main(){
         list2.push_back(b);
     }
     cout <<"Sum of similarity scores is " <<  find_similarity_score(list1, list2) << endl;
+    fclose(f);
     return 0;
 }
